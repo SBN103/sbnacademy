@@ -9,14 +9,24 @@
 </head>
 <body>
   <header>
-<!-- Hamburger Button -->
-<div class="hamburger">
+<div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+  <img src="logo.png" alt="S.B.N ACADEMY Logo" style="height: 50px;">
+  <h1>S.B.N ACADEMY</h1>
+</div>
+</header>
+  
+
+<div class="hamburger" onclick="toggleMenu()">
   <span></span>
   <span></span>
   <span></span>
 </div>
+<script>
+function toggleMenu() {
+  document.querySelector('nav.navbar').classList.toggle('active');
+}
+</script>
 
-<!-- Navigation Menu -->
 <nav class="navbar" style="text-align: center; margin-top: 10px;">
   <a href="index.html">Home</a> |
   <a href="about.html">About</a> |
@@ -24,7 +34,7 @@
   <a href="contact.html">Contact</a>
 </nav>
 
-<!-- Dark Mode Toggle -->
+  
 <div style="text-align: center; margin-top: 10px;">
   <label class="switch">
     <input type="checkbox" id="themeToggle">
