@@ -9,21 +9,58 @@
 </head>
 <body>
   <header>
-    <nav style="text-align: center; margin-top: 10px;">
-  <a href="index.html">Home</a> |
-  <a href="about.html">About</a> |
-  <a href="videos.html">Videos</a> |
-  <a href="contact.html">Contact</a>
-</nav>
 <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
   <img src="logo.png" alt="S.B.N ACADEMY Logo" style="height: 50px;">
   <h1>S.B.N ACADEMY</h1>
 </div>
 </header>
+  
+
+<div class="hamburger" onclick="toggleMenu()">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+<script>
+function toggleMenu() {
+  document.querySelector('nav.navbar').classList.toggle('active');
+}
+</script>
+
+<nav class="navbar" style="text-align: center; margin-top: 10px;">
+  <a href="index.html">Home</a> |
+  <a href="about.html">About</a> |
+  <a href="videos.html">Videos</a> |
+  <a href="contact.html">Contact</a>
+</nav>
+
+  
+<div style="text-align: center; margin-top: 10px;">
+  <label class="switch">
+    <input type="checkbox" id="themeToggle">
+    <span class="slider round"></span>
+  </label>
+</div>
+<script>
+  const toggle = document.getElementById('themeToggle');
+  const body = document.body;
+  toggle.checked = localStorage.getItem("theme") === "dark";
+  if (toggle.checked) body.classList.add("dark");
+  toggle.addEventListener('change', () => {
+    if (toggle.checked) {
+      body.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      body.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  });
+</script>
+
   <main>
     <section>
       <h2>About Us</h2>
-      <p>S.B.N ACADEMY is dedicated to providing quality educational content for primary and junior students. We focus on general knowledge, foundational concepts, and engaging visuals to make learning fun and accessible for everyone.</p>
+      <p>S.B.N ACADEMY provides quality content for primary and junior students with a focus on fun, general knowledge, and easy learning.</p>
     </section>
   </main>
   <footer>
